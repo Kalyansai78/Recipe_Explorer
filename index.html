@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="RecipeExplorer - Discover delicious recipes from around the world."
+    >
+
+    <title>RecipeExplorer | Discover Delicious Recipes</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">🍳</span>
+                <span>Recipe<span class="logo-highlight">Explorer</span></span>
+            </a>
+
+            <button id="favoritesBtn" class="favorites-btn" type="button">
+                ♡
+                <span>Favorites</span>
+                <span id="favoritesCount">0</span>
+            </button>
+
+            <button
+                id="themeToggle"
+                class="theme-toggle"
+                type="button"
+                aria-label="Switch to dark mode"
+                title="Switch to dark mode"
+            >
+                🌙
+            </button>
+
+            <div class="account-wrapper">
+
+                <button id="accountBtn" class="account-btn" type="button">
+                    👤 Account
+                </button>
+
+                <div id="accountMenu" class="account-menu hidden">
+
+                    <div class="account-info">
+                        <strong id="accountName">User</strong>
+                        <span id="accountEmail">user@example.com</span>
+                    </div>
+
+                    <div class="account-divider"></div>
+
+                    <button
+                        type="button"
+                        id="menuLogoutBtn"
+                        class="menu-logout-btn"
+                    >
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    🍴 Explore • Cook • Enjoy
+                </span>
+
+                <h1>
+                    Discover Your
+                    <span>Next Favorite Meal</span>
+                </h1>
+
+                <p>
+                    Search thousands of delicious recipes from around the world
+                    and find something perfect to cook today.
+                </p>
+
+
+                <!-- Search -->
+                <form class="search-form" id="searchForm">
+
+                    <div class="search-box">
+
+                        <span class="search-icon" aria-hidden="true">🔍</span>
+
+                        <input
+                            type="text"
+                            id="searchInput"
+                            placeholder="Search for chicken, pasta, pizza..."
+                            autocomplete="off"
+                            aria-label="Search for recipes"
+                        >
+
+                        <button type="submit" id="searchButton">
+                            Search
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <!-- Popular Searches -->
+                <div class="popular-searches">
+
+                    <span>Popular:</span>
+
+                    <button type="button" class="popular-btn" data-search="Chicken">
+                        Chicken
+                    </button>
+
+                    <button type="button" class="popular-btn" data-search="Pasta">
+                        Pasta
+                    </button>
+
+                    <button type="button" class="popular-btn" data-search="Beef">
+                        Beef
+                    </button>
+
+                    <button type="button" class="popular-btn" data-search="Dessert">
+                        Dessert
+                    </button>
+
+                    <button type="button" class="popular-btn" data-search="Pizza">
+                        Pizza
+                    </button>
+
+                </div>
+
+                <!-- Categories -->
+                <div class="categories">
+
+                    <span class="categories-title">Explore by Category:</span>
+
+                    <button type="button" class="category-btn" data-category="breakfast">
+                        🍳 Breakfast
+                    </button>
+
+                    <button type="button" class="category-btn" data-category="main course">
+                        🍝 Main Course
+                    </button>
+
+                    <button type="button" class="category-btn" data-category="dessert">
+                        🍰 Dessert
+                    </button>
+
+                    <button type="button" class="category-btn" data-category="salad">
+                        🥗 Salad
+                    </button>
+
+                    <button type="button" class="category-btn" data-category="soup">
+                        🍲 Soup
+                    </button>
+
+                    <button type="button" class="category-btn" data-category="snack">
+                        🍿 Snack
+                    </button>
+
+                    <button type="button" id="surpriseBtn" class="surprise-btn">
+                        🎲 Surprise Me
+                    </button>
+
+                </div>
+
+                <!-- Cuisine / Area -->
+                <div class="cuisines">
+
+                    <span class="cuisines-title">Explore by Cuisine:</span>
+
+                    <button type="button" class="cuisine-btn" data-cuisine="Italian">
+                        <img src="assets/flags/italy.svg" alt="" class="cuisine-flag">
+                        Italian
+                    </button>
+
+                    <button type="button" class="cuisine-btn" data-cuisine="Mexican">
+                        <img src="assets/flags/mexico.svg" alt="" class="cuisine-flag">
+                        Mexican
+                    </button>
+
+                    <button type="button" class="cuisine-btn" data-cuisine="Indian">
+                        <img src="assets/flags/india.svg" alt="" class="cuisine-flag">
+                        Indian
+                    </button>
+
+                    <button type="button" class="cuisine-btn" data-cuisine="Japanese">
+                        <img src="assets/flags/japan.svg" alt="" class="cuisine-flag">
+                        Japanese
+                    </button>
+
+                    <button type="button" class="cuisine-btn" data-cuisine="Chinese">
+                        <img src="assets/flags/china.svg" alt="" class="cuisine-flag">
+                        Chinese
+                    </button>
+
+                    <button type="button" class="cuisine-btn" data-cuisine="Mediterranean">
+                        🌊 Mediterranean
+                    </button>
+
+                </div>
+
+                <!-- Ingredient Search -->
+                <div class="ingredient-search">
+
+                    <span class="ingredient-title">What ingredients do you have?</span>
+
+                    <div class="ingredient-input-row">
+
+                        <input
+                            type="text"
+                            id="ingredientInput"
+                            placeholder="e.g. chicken, tomato, onion"
+                            autocomplete="off"
+                            aria-label="Enter an ingredient"
+                        />
+
+                        <button
+                            type="button"
+                            id="addIngredientBtn"
+                            class="add-ingredient-btn"
+                        >
+                            + Add
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="ingredientChips"
+                        class="ingredient-chips"
+                    >
+                        <!-- Ingredient chips will appear here -->
+                    </div>
+
+                    <button
+                        type="button"
+                        id="findRecipesBtn"
+                        class="find-recipes-btn"
+                    >
+                        🔍 Find Recipes
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Search History -->
+            <div class="search-history">
+
+                <div class="history-header">
+                    <span class="history-title">🕘 Recent Searches</span>
+
+                    <button
+                        type="button"
+                        id="clearHistoryBtn"
+                        class="clear-history-btn"
+                    >
+                        Clear
+                    </button>
+                </div>
+
+                <div
+                    id="searchHistory"
+                    class="search-history-list"
+                >
+                    <!-- Search history items will appear here -->
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Results Section -->
+        <section class="results-section" id="resultsSection">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">DISCOVER</span>
+                    <h2>Recipe Results</h2>
+                </div>
+
+                <p id="resultCount"></p>
+
+            </div>
+
+
+            <!-- Loading -->
+            <div class="loading" id="loading">
+
+                <div class="spinner"></div>
+
+                <p>Finding delicious recipes...</p>
+
+            </div>
+
+
+            <!-- Messages -->
+            <div class="message hidden" id="message">
+
+                <div class="message-icon">🍽️</div>
+
+                <h3 id="messageTitle">
+                    Find something delicious
+                </h3>
+
+                <p id="messageText">
+                    Search for a recipe to get started.
+                </p>
+
+            </div>
+
+
+            <!-- Results -->
+            <div class="results-grid" id="results" aria-live="polite" aria-busy="false"></div>
+
+        </section>
+
+    </main>
+     
+    
+     <!-- Authentication Modal -->
+    <div id="authModal" class="auth-modal hidden">
+
+        <div class="auth-modal-content">
+
+            <button
+                id="closeAuthModal"
+                class="close-auth-modal"
+                type="button"
+                aria-label="Close authentication window"
+            >
+                &times;
+            </button>
+
+            <div class="auth-header">
+                <span class="auth-icon">👤</span>
+                <h2 id="authTitle">Welcome Back</h2>
+                <p id="authSubtitle">
+                    Login to save and manage your favorite recipes.
+                </p>
+            </div>
+
+            <form id="authForm">
+                  
+                <div class="auth-field">
+                    <label for="authName">Name</label>
+
+                    <div class="auth-input-wrapper">
+                        <svg
+                            class="auth-input-icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                        >
+                            <circle
+                                cx="12"
+                                cy="8"
+                                r="4"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+
+                            <path
+                                d="M4 21C4 16.58 7.58 13 12 13C16.42 13 20 16.58 20 21"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+
+                        <input
+                            type="text"
+                            id="authName"
+                            placeholder="Enter your name"
+                        >
+                    </div>
+                </div>
+
+                <div class="auth-field">
+                    <label for="authEmail">Email</label>
+
+                    <div class="auth-input-wrapper">
+
+                        <svg
+                            class="auth-input-icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                        >
+                            <path
+                                d="M4 5H20C21.1 5 22 5.9 22 7V17C22 18.1 21.1 19 20 19H4C2.9 19 2 18.1 2 17V7C2 5.9 2.9 5 4 5Z"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M2 7L12 13L22 7"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+
+                        <input
+                            type="email"
+                            id="authEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="auth-field">
+
+                    <label for="authPassword">Password</label>
+
+                    <div class="password-input-wrapper">
+
+                        <svg
+                            class="auth-input-icon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                        >
+                            <rect
+                                x="5"
+                                y="10"
+                                width="14"
+                                height="10"
+                                rx="2"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            />
+
+                            <path
+                                d="M8 10V7C8 4.79 9.79 3 12 3C14.21 3 16 4.79 16 7V10"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="15"
+                                r="1"
+                                fill="currentColor"
+                            />
+                        </svg>
+
+                        <input
+                            type="password"
+                            id="authPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="toggle-password"
+                            aria-label="Show password"
+                        >
+                            <!-- Eye icon -->
+                            <svg
+                                class="eye-icon eye-open"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M2 12C2 12 5.5 5 12 5C18.5 5 22 12 22 12C22 12 18.5 19 12 19C5.5 19 2 12 2 12Z"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linejoin="round"
+                                />
+
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="3"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+                            </svg>
+
+                            <!-- Eye-off icon -->
+                            <svg
+                                class="eye-icon eye-closed hidden"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M3 3L21 21"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+
+                                <path
+                                    d="M10.6 5.2C11.05 5.07 11.52 5 12 5C18.5 5 22 12 22 12C22 12 20.7 14.6 18.2 16.5"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+
+                                <path
+                                    d="M6.2 6.2C3.4 8.2 2 12 2 12C2 12 5.5 19 12 19C13.8 19 15.4 18.4 16.8 17.5"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+
+                    </div>
+
+                    <small id="passwordHint" class="password-hint hidden">
+                        Password must be at least 6 characters.
+                    </small>
+
+                </div>
+
+                <button
+                    type="submit"
+                    id="authSubmit"
+                    class="auth-submit"
+                >
+                    Login
+                </button>
+
+            </form>
+
+            <p id="authMessage" class="auth-message"></p>
+
+            <button
+                type="button"
+                id="authSwitch"
+                class="auth-switch"
+            >
+                Don't have an account? Sign Up
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Recipe Details Modal -->
+    <div id="recipeModal" class="recipe-modal hidden">
+
+        <div class="recipe-modal-content">
+
+            <button id="closeModal" class="close-modal" type="button" aria-label="Close recipe details">
+                &times;
+            </button>
+
+            <div id="recipeDetails">
+                <!-- Recipe details will be inserted here -->
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <p>
+            Made with ❤️ using HTML, CSS, JavaScript & Spoonacular API
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script type="module" src="/src/app.js"></script>
+
+    <!-- Toast Notification -->
+    <div
+        id="toast"
+        class="toast hidden"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+    >
+        <span id="toastIcon" class="toast-icon">✓</span>
+        <span id="toastMessage">Success</span>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <!-- Pan -->
+    <path d="M14 31
+           C14 20 22 13 32 13
+           C42 13 50 20 50 31
+           C50 42 42 50 32 50
+           C22 50 14 42 14 31Z" fill="#4B3F72"></path>
+
+    <!-- Pan handle -->
+    <path d="M47 43
+           L57 53
+           C59 55 59 58 57 59
+           C55 60 53 59 52 58
+           L42 48Z" fill="#4B3F72"></path>
+
+    <!-- Egg -->
+    <path d="M21 31
+           C21 25 26 21 32 21
+           C38 21 43 25 43 31
+           C43 37 38 41 32 41
+           C26 41 21 37 21 31Z" fill="#FFF8E7"></path>
+
+    <!-- Egg yolk -->
+    <circle cx="32" cy="31" r="6" fill="#F9A825"></circle>
+
+    <!-- Small highlight -->
+    <circle cx="30" cy="29" r="2" fill="#FFD54F"></circle>
+</svg>
