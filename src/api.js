@@ -2,7 +2,6 @@ const API_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY;
 
 const BASE_URL = "https://api.spoonacular.com/recipes";
 
-
 // Search recipes
 
 export async function searchRecipes(query) {
