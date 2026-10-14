@@ -68,9 +68,8 @@ The project was designed with a focus on a clean user interface, responsive desi
 - GitHub — source code and version control
 - Vercel — production deployment
 
-## 🏗️ Project Structure
+## 📁 Project Structure
 
-```text
 RecipeExplorer/
 │
 ├── assets/
@@ -99,3 +98,24 @@ RecipeExplorer/
 ├── package-lock.json
 ├── README.md
 └── style.css
+
+## 🚀 Getting Started
+
+1. Clone the repository:
+
+   git clone https://github.com/Kalyansai78/Recipe_Explorer.git
+
+2. Navigate to the project directory:
+
+   cd Recipe_Explorer
+
+3. Install dependencies and start the development server:
+
+   npm install
+   npm run dev
+
+## 👨‍💻 Author
+
+**Kalyan Sai**
+
+GitHub: [@Kalyansai78](https://github.com/Kalyansai78)
