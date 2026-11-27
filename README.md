@@ -70,6 +70,7 @@ The project was designed with a focus on a clean user interface, responsive desi
 
 ## 📁 Project Structure
 
+```text
 RecipeExplorer/
 │
 ├── assets/
@@ -98,6 +99,7 @@ RecipeExplorer/
 ├── package-lock.json
 ├── README.md
 └── style.css
+```
 
 ## 🚀 Getting Started
 
